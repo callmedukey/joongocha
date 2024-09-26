@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 24 100% 49%;
+    --primaryText: 0 0% 27%;
+    --primary-background-color: 0 0% 98%;
+    --primary-foreground: 0 0% 98%;
+    --primary-blue: 200 28% 42%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    --mb: clamp(2rem, 5vw, 3.5rem);
+    --mb-half: calc(var(--mb) / 2);
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-primaryBackgroundColor text-primaryText font-medium;
+  }
+
+  .triangle {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    margin: 2.25rem auto;
+    background-color: hsl(var(--primary));
+    transform: rotate(180deg);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+    &:nth-of-type(1) {
+      opacity: 0.7;
+    }
+    &:nth-of-type(2) {
+      --size: 34px;
+      opacity: 0.5;
+    }
+    &:nth-of-type(3) {
+      --size: 30px;
+      opacity: 0.3;
+    }
+  }
+
+  .thirty {
+    font-size: clamp(1.25rem, 1.5vw, 1.875rem);
+  }
+  .thirty-fixed {
+    font-size: 1.875rem;
+  }
+
+  .thirtysix {
+    font-size: clamp(2rem, 2.25vw, 2.25rem);
+  }
+
+  .fourtyeight {
+    font-size: clamp(2.5rem, 3vw, 3rem);
+  }
+
+  .fifty {
+    font-size: clamp(2.8rem, 3vw, 3.125rem);
+  }
+
+  .form-outer {
+    margin-top: var(--mb);
+    margin-bottom: var(--mb);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55rem;
+    width: 100%;
+  }
+  .form-inner {
+    padding-top: var(--mb);
+    padding-bottom: var(--mb);
+    padding-left: clamp(30px, 5vw, 40px);
+    padding-right: clamp(30px, 5vw, 40px);
+  }
+
+  .form-circles {
+    --circle-size: 250px;
+    --circle-blur: 2px;
+    --circle-color: rgba(248, 100, 0, 0.1);
+
+    overflow: clip;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: var(--circle-size);
+      height: var(--circle-size);
+      background-color: var(--circle-color);
+      border-radius: 50%;
+      z-index: -50;
+      filter: blur(var(--circle-blur));
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      right: -25px;
+      width: var(--circle-size);
+      height: var(--circle-size);
+      background-color: var(--circle-color);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(var(--circle-blur));
+    }
+
+    @media (max-width: 1024px) {
+      &::after {
+        bottom: -25px;
+        left: -50px;
+        right: unset;
+      }
+    }
+  }
+}

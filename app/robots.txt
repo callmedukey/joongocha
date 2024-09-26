@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kexportcar.com/sitemap.xml
