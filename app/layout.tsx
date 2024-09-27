@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon.ico" },
   other: {
-    "naver-site-verification": "123",
+    "naver-site-verification": "4e7f772d41f347e8b7673a58b6ee1a191f2a0b32",
   },
 };
 
