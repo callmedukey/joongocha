@@ -1,8 +1,6 @@
 import Link from "next/link";
-import NavLink from "./NavLink";
 import Logo from "@/public/img/daehan-logo.png";
 import Image from "next/image";
-import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
