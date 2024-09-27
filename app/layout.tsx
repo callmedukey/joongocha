@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import Script from "next/script";
 
 const Pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -67,6 +68,19 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        <Script
+          id="smlog-script"
+          dangerouslySetInnerHTML={{
+            __html: `var hpt_info={'_account':'UHPT-29090', '_server': 'a28'};`,
+          }}
+        ></Script>
+        <noscript>
+          <img
+            src="//a28.smlog.co.kr/smart_bda.php?_account=29090"
+            style={{ display: "none", width: 0, height: 0 }}
+          />
+        </noscript>
+        <Script src="//cdn.smlog.co.kr/core/smart.js" />
       </body>
     </html>
   );

@@ -11,10 +11,10 @@ import {
 import type { Consultant, Consultation } from "@prisma/client";
 import { format } from "date-fns";
 import { Button } from "../ui/button";
-import { deleteInquiry } from "@/actions/deleteInquiry";
 import { useState } from "react";
 import ConsultantEditDialog from "./ConsultantEditDialog";
 import AddConsultantDialog from "./AddConsultantDialog";
+import { deleteConsultant } from "@/actions/consultants";
 
 export interface ConsultationWithConsultant extends Consultation {
   consultant?: Consultant | null;
@@ -31,11 +31,11 @@ const ConsultantTable = ({ consultants }: { consultants: Consultant[] }) => {
       return;
     }
     setIsLoading(true);
-    const { success } = await deleteInquiry(id);
+    const { success } = await deleteConsultant(id);
     if (success) {
-      alert("상담 신청이 삭제되었습니다.");
+      alert("상담원이 삭제되었습니다.");
     } else {
-      alert("상담 신청 삭제에 실패했습니다.");
+      alert("상담원 삭제에 실패했습니다.");
     }
     setIsLoading(false);
   };

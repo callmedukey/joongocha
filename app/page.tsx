@@ -50,7 +50,7 @@ const carList = [
 export default function Home() {
   return (
     <main className="overflow-clip">
-      <article className="relative h-[min(40dvh,500px)] isolate bg-black p-4 lg:p-8 md:p-6 flex items-center justify-center">
+      <article className="relative h-[min(80dvh,600px)] isolate bg-black p-4 lg:p-8 md:p-6 flex items-center justify-center">
         <div className="absolute inset-0 bg-white/70 z-10" />
         <Image
           src={Logo}
