@@ -204,7 +204,7 @@ export default function Home() {
               <span>
                 폐차보다{" "}
                 <span className="font-bold text-primary">
-                  50만~300만원까지 더
+                  50만원~300만원까지 더
                 </span>{" "}
                 받을 수 있습니다
               </span>
