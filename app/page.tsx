@@ -166,7 +166,7 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   연식이 오래되어도
                 </span>{" "}
-                감가율 적습니다
+                감가율이 적습니다
               </span>
             </span>
           </li>
@@ -179,7 +179,7 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   주행거리가 많아도
                 </span>{" "}
-                감가율 적습니다
+                감가율이 적습니다
               </span>
             </span>
           </li>
@@ -192,7 +192,7 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   사고 이력이 있는 차량도
                 </span>{" "}
-                감가율 적습니다
+                감가율이 적습니다
               </span>
             </span>
           </li>
@@ -204,7 +204,7 @@ export default function Home() {
               <span>
                 폐차보다{" "}
                 <span className="font-bold text-primary">
-                  50만~300만 원까지 더
+                  50만~300만원까지 더
                 </span>{" "}
                 받을 수 있습니다
               </span>
