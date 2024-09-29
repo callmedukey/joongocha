@@ -15,7 +15,7 @@ const CarouselList = [
   },
   {
     src: SecondImage,
-    title: "타사 대비 +200만 원 더 받기",
+    title: "타사 대비 +200만원 더 받기",
     subtitle: "감가 없이 내차 팔기",
   },
 ];

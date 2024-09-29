@@ -5,6 +5,8 @@ import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import FixedAside from "@/components/layout/FixedAside";
+import Image from "next/image";
+import DarkPhone from "@/public/dark-phone.png";
 
 const Pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -72,6 +74,15 @@ export default function RootLayout({
         {children}
         <Footer />
         <FixedAside />
+        <a href="tel:050-8202-1308">
+          <Image
+            src={DarkPhone}
+            alt="모바일 폰"
+            width={42}
+            height={42}
+            className="lg:hidden fixed top-8 right-4 z-50"
+          />
+        </a>
         <Script
           id="smlog-script"
           dangerouslySetInnerHTML={{

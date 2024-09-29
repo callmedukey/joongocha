@@ -76,7 +76,9 @@ const InquiryForm = ({
             name="car"
             render={({ field }) => (
               <FormItem className="flex items-center gap-8 mb-[var(--mb)] mx-auto lg:mx-0 max-w-lg">
-                <FormLabel className="text-base sm:text-xl">차량명</FormLabel>
+                <FormLabel className="text-base sm:text-xl min-w-12 text-left">
+                  차량
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="차량을 입력해 주세요 예. K5"
@@ -93,7 +95,9 @@ const InquiryForm = ({
             name="phone"
             render={({ field }) => (
               <FormItem className="flex items-center gap-8 mb-[var(--mb-half)] mx-auto lg:mx-0 max-w-lg">
-                <FormLabel className="text-base sm:text-xl">핸드폰</FormLabel>
+                <FormLabel className="text-base sm:text-xl min-w-12 text-left">
+                  연락처
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="010"
@@ -158,7 +162,7 @@ const InquiryForm = ({
             disabled={isLoading}
             className="mx-auto flex items-center gap-2"
           >
-            1분만에 내차 최고가 시세 조회 click!
+            1분만에 내차 시세 조회 click!
             <Image
               src="/click.svg"
               alt="클릭"

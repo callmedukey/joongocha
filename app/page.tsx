@@ -96,7 +96,7 @@ export default function Home() {
         <div className="relative xl:flex gap-6 justify-center max-w-6xl mx-auto">
           <section className="max-w-3xl mx-auto z-50 bg-primary rounded-3xl py-8 lg:px-16 px-2 sm:px-8 isolate relative w-full">
             <h2 className="thirty-fixed font-bold text-white text-center border-b-2 pb-4 max-w-sm mx-auto lg:max-w-full sm:max-w-lg">
-              실시간 차량상담 접수 전황
+              실시간 차량 상담 접수 현황
             </h2>
             <FakeRealtime />
           </section>
@@ -158,7 +158,7 @@ export default function Home() {
         />
         <ol className="space-y-6 list-text">
           <li className="flex bg-white z-10 rounded-full border shadow-md min-h-12 sm:min-h-16 md:min-h-20 py-2 text-center md:text-left px-2 sm:px-4 items-center">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-left">
               <span className="font-bold size-6 sm:size-8 md:size-10 bg-primary text-white rounded-full flex items-center justify-center">
                 1
               </span>
@@ -166,12 +166,12 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   연식이 오래되어도
                 </span>{" "}
-                감가율 적음
+                감가율 적습니다
               </span>
             </span>
           </li>
           <li className="flex bg-white z-10 rounded-full border shadow-md min-h-12 sm:min-h-16 md:min-h-20 py-2 text-center md:text-left px-2 sm:px-4 items-center">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-left">
               <span className="font-bold size-6 sm:size-8 md:size-10 bg-primary text-white rounded-full flex items-center justify-center">
                 2
               </span>
@@ -179,12 +179,12 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   주행거리가 많아도
                 </span>{" "}
-                감가율 적음
+                감가율 적습니다
               </span>
             </span>
           </li>
           <li className="flex bg-white z-10 rounded-full border shadow-md min-h-12 sm:min-h-16 md:min-h-20 py-2 text-center md:text-left px-2 sm:px-4 items-center">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-left">
               <span className="font-bold size-6 sm:size-8 md:size-10 bg-primary text-white rounded-full flex items-center justify-center">
                 3
               </span>
@@ -192,21 +192,21 @@ export default function Home() {
                 <span className="font-bold text-primary">
                   사고 이력이 있는 차량도
                 </span>{" "}
-                감가율 적음
+                감가율 적습니다
               </span>
             </span>
           </li>
           <li className="flex bg-white z-10 rounded-full border shadow-md min-h-12 sm:min-h-16 md:min-h-20 py-2 text-center md:text-left px-2 sm:px-4 items-center">
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-left">
               <span className="font-bold size-6 sm:size-8 md:size-10 bg-primary text-white rounded-full flex items-center justify-center">
                 4
               </span>
               <span>
                 폐차보다{" "}
                 <span className="font-bold text-primary">
-                  50만 원에서 300만 원까지 더
+                  50만~300만 원까지 더
                 </span>{" "}
-                받을 수 있음
+                받을 수 있습니다
               </span>
             </span>
           </li>
