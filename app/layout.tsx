@@ -72,7 +72,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <FixedAside />
-        {/* <Script
+        <Script
           id="smlog-script"
           dangerouslySetInnerHTML={{
             __html: `var hpt_info={'_account':'UHPT-29090', '_server': 'a28'};`,
@@ -84,7 +84,7 @@ export default function RootLayout({
             style={{ display: "none", width: 0, height: 0 }}
           />
         </noscript>
-        <Script src="//cdn.smlog.co.kr/core/smart.js" /> */}
+        <Script src="//cdn.smlog.co.kr/core/smart.js" />
       </body>
     </html>
   );
