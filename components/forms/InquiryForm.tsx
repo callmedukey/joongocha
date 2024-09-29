@@ -24,9 +24,11 @@ import { cn } from "@/lib/utils";
 const InquiryForm = ({
   className,
   smallLabel,
+  disableId,
 }: {
   className?: string;
   smallLabel?: boolean;
+  disableId?: boolean;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -57,7 +59,7 @@ const InquiryForm = ({
   return (
     <Form {...form}>
       <form
-        id="inquiry-form"
+        id={disableId ? "" : "inquiry-form"}
         className={cn(
           "max-w-4xl mx-auto form-outer form-inner rounded-2xl bg-[#FFF1E8] border isolate relative flex flex-col items-center xl:px-40",
           className

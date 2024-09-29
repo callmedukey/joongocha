@@ -232,7 +232,7 @@ export default function Home() {
         </div>
       </article>
       <article className="px-4 mb-24">
-        <InquiryForm className="max-w-screen-8xl mx-auto" />
+        <InquiryForm className="max-w-screen-8xl mx-auto" disableId />
       </article>
       <article className="flex flex-wrap justify-center gap-x-[clamp(4rem,10vw,8rem)] bg-white lg:gap-y-4 gap-y-8 mx-auto px-4 border-t-2 border-primary pt-4 pb-12">
         <PartnerCarousel speed="normal" />
