@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
+import Header from "@/components/layout/Header";
+import FixedAside from "@/components/layout/FixedAside";
 
 const Pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -66,9 +68,11 @@ export default function RootLayout({
       <body
         className={`${Pretendard.variable} antialiased break-keep isolate font-pretendard`}
       >
+        <Header />
         {children}
         <Footer />
-        <Script
+        <FixedAside />
+        {/* <Script
           id="smlog-script"
           dangerouslySetInnerHTML={{
             __html: `var hpt_info={'_account':'UHPT-29090', '_server': 'a28'};`,
@@ -80,7 +84,7 @@ export default function RootLayout({
             style={{ display: "none", width: 0, height: 0 }}
           />
         </noscript>
-        <Script src="//cdn.smlog.co.kr/core/smart.js" />
+        <Script src="//cdn.smlog.co.kr/core/smart.js" /> */}
       </body>
     </html>
   );

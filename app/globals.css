@@ -38,6 +38,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --threeRem: 3rem;
+    --twoTwoFive: 2.25rem;
 
     --mb: clamp(2rem, 5vw, 3.5rem);
     --mb-half: calc(var(--mb) / 2);
@@ -75,7 +77,31 @@
     @apply border-border;
   }
   body {
-    @apply bg-primaryBackgroundColor text-primaryText font-medium;
+    @apply text-primaryText font-medium;
+  }
+
+  .threeRem {
+    font-size: var(--threeRem);
+
+    @media (max-width: 768px) {
+      font-size: clamp(1.5rem, 6vw, var(--threeRem));
+    }
+  }
+
+  .list-text {
+    font-size: clamp(0.75rem, 3vw, 1.875rem);
+
+    @media (min-width: 768px) {
+      font-size: clamp(1rem, 3vw, 1.875rem);
+    }
+  }
+
+  .twoTwoFive {
+    font-size: var(--twoTwoFive);
+
+    @media (max-width: 768px) {
+      font-size: clamp(1.4rem, 5vw, var(--twoTwoFive));
+    }
   }
 
   .triangle {
@@ -132,48 +158,5 @@
     padding-bottom: var(--mb);
     padding-left: clamp(30px, 5vw, 40px);
     padding-right: clamp(30px, 5vw, 40px);
-  }
-
-  .form-circles {
-    --circle-size: 250px;
-    --circle-blur: 2px;
-    --circle-color: rgba(248, 100, 0, 0.1);
-
-    overflow: clip;
-
-    &::before {
-      content: "";
-
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: var(--circle-size);
-      height: var(--circle-size);
-      background-color: var(--circle-color);
-      border-radius: 50%;
-      z-index: -50;
-      filter: blur(var(--circle-blur));
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -50px;
-      right: -25px;
-      width: var(--circle-size);
-      height: var(--circle-size);
-      background-color: var(--circle-color);
-      border-radius: 50%;
-      z-index: -1;
-      filter: blur(var(--circle-blur));
-    }
-
-    @media (max-width: 1024px) {
-      &::after {
-        bottom: -25px;
-        left: -50px;
-        right: unset;
-      }
-    }
   }
 }

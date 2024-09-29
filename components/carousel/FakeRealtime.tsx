@@ -32,11 +32,11 @@ const FakeRealtime = () => {
   };
 
   return (
-    <ul className="py-8 max-w-sm mx-auto lg:max-w-full sm:max-w-lg">
+    <ul className="py-8 max-w-sm mx-auto lg:max-w-full sm:max-w-lg flex-1">
       <Splide options={splideOptions}>
         {ConsultStatus.map((data, i) => (
           <SplideSlide key={i}>
-            <div className="bg-primaryBlue rounded-lg py-4 sm:px-8 px-4 flex items-center md:gap-12 gap-6">
+            <div className="bg-primaryBlue rounded-lg py-4 md:px-8 px-2 sm:px-4 flex items-center md:gap-12 sm:gap-6 gap-2 text-sm sm:text-[clamp(1rem, 1.5vw, 1.25rem)]">
               <div className="bg-white text-primary p-1.5 rounded-lg font-medium">
                 NEW
               </div>

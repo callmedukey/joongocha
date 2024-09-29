@@ -6,6 +6,7 @@ import LogoutButton from "@/components/auth/LogoutButton";
 import InquiryTable from "@/components/admin/InquiryTable";
 import ConsultantTable from "@/components/admin/ConsultantTable";
 import AdminPasswordForm from "@/components/admin/AdminPasswordForm";
+import NextConsultantDialog from "@/components/admin/NextConsultantDialog";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,18 @@ const AdminPage = async () => {
   }
 
   const nextConsultant = (global as any)?.nextConsultant;
+
+  if (!nextConsultant) {
+    const consultants = await prisma.consultant.findMany({
+      where: {
+        active: true,
+      },
+      orderBy: {
+        id: "asc",
+      },
+    });
+    (global as any).nextConsultant = consultants[0].id || 1;
+  }
 
   const inquiries = await prisma.consultation.findMany({
     include: {
@@ -36,8 +49,11 @@ const AdminPage = async () => {
 
   return (
     <main className="min-h-screen py-12 px-4 tracking-normal font-sans">
-      <div className="flex items-center justify-center mb-6">
-        <p>다음 상담원 ID: {nextConsultant || 1}</p>
+      <div className="flex items-center justify-center mb-6 max-w-md mx-auto gap-6">
+        <p className="flex items-center gap-2 justify-center">
+          다음 상담원 ID: {nextConsultant || 1}
+        </p>
+        <NextConsultantDialog nextConsultant={nextConsultant || 1} />
       </div>
       <section className="max-w-screen-8xl mx-auto w-full flex items-center justify-center">
         <Tabs defaultValue="inquiry" className="w-full mx-auto min-h-screen">

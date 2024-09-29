@@ -26,6 +26,9 @@ const config: Config = {
           },
         },
       },
+      screens: {
+        "8xl": "90rem",
+      },
       fontFamily: {
         pretendard: ["Pretendard", "sans-serif"],
       },

@@ -7,6 +7,7 @@ import { headers } from "next/headers";
 import UAParser from "ua-parser-js";
 import { SolapiMessageService } from "solapi";
 import { revalidatePath } from "next/cache";
+import type { Consultant } from "@prisma/client";
 
 export async function submitInquiry(formData: z.infer<typeof formSchema>) {
   try {
@@ -44,11 +45,12 @@ export async function submitInquiry(formData: z.infer<typeof formSchema>) {
     }
 
     const lastConsultantId = consultants[consultants.length - 1].id;
+    const firstConsultantId = consultants[0].id;
 
     const nextConsultantId = (global as any)?.nextConsultant;
 
     if (!nextConsultantId) {
-      (global as any).nextConsultant = consultants[0].id || 1;
+      (global as any).nextConsultant = firstConsultantId;
     }
 
     const consultation = await prisma.consultation.create({
@@ -71,7 +73,7 @@ export async function submitInquiry(formData: z.infer<typeof formSchema>) {
     );
     await solapi.sendOne({
       to: consultants
-        .find((consultant) => consultant.id === nextConsultantId)
+        .find((consultant: Consultant) => consultant.id === nextConsultantId)
         ?.phoneNumber.replaceAll("-", "") as string,
       from: process.env.SOLAPI_SENDER_PHONE_NUMBER as string,
       text: `
@@ -84,7 +86,7 @@ export async function submitInquiry(formData: z.infer<typeof formSchema>) {
     revalidatePath("/admin");
 
     if (nextConsultantId >= lastConsultantId) {
-      (global as any).nextConsultant = consultants[0].id;
+      (global as any).nextConsultant = firstConsultantId;
     } else {
       const index = consultants.findIndex(
         (consultant) => consultant.id === nextConsultantId
