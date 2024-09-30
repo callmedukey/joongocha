@@ -119,6 +119,7 @@ export default function Home() {
           height={1460}
           quality={100}
           placeholder="blur"
+          priority
           className="mx-auto max-w-4xl w-full"
         />
       </article>
@@ -228,6 +229,7 @@ export default function Home() {
             className="object-contain w-full h-full"
             placeholder="blur"
             quality={100}
+            priority
           />
         </div>
       </article>
