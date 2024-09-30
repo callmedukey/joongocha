@@ -1,6 +1,6 @@
 services:
   app:
-    image: callmedukey/kexportcar:latest
+    image: gg
     ports:
       - "3000:3000"
     restart: always

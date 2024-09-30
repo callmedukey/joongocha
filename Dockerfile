@@ -1,24 +1,26 @@
 # Builder image
-FROM node:20-alpine AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 # First install dependencies so we can cache them
 RUN apk update && apk upgrade
 RUN apk add curl
+RUN apk add --no-cache libc6-compat
 
 COPY package.json package-lock.json ./
 RUN npm install
 RUN npm install -g prisma
 RUN npm install @prisma/client
 
+RUN npm install --cpu=x64 --os=linux --libc=musl sharp@0.32.6
 # Now copy the rest of the app and build it
 COPY . .
 RUN npx prisma generate
 RUN npm run build
 
 # Production image
-FROM node:20-alpine AS runner
+FROM node:18-alpine AS runner
 
 WORKDIR /app
 

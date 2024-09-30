@@ -3,6 +3,12 @@ import bcrypt from "bcrypt";
 const prisma = new PrismaClient();
 
 async function main() {
+
+  const admin = await prisma.admin.findFirst();
+  if (admin) {
+    console.log("Admin already exists");
+    return;
+  }
   await prisma.admin.create({
     data: {
       username: "admin",
