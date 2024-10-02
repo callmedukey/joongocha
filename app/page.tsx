@@ -14,6 +14,8 @@ import Vector from "@/public/vector.png";
 import Diagram from "@/public/diagram.png";
 import { PartnerCarousel } from "@/components/partners/PartnerCarousel";
 import FirstCarousel from "@/components/carousel/FirstCarousel";
+import Ad from "@/public/ad.png";
+
 import Sonata from "@/public/sonata.jpeg";
 import QM from "@/public/qm.png";
 const carList = [
@@ -52,12 +54,12 @@ export default function Home() {
     <main className="isolate overflow-clip">
       <article className="max-w-screen-8xl mx-auto">
         <FirstCarousel />
-        <section className="md:hidden relative min-h-[min(80dvh,500px)] flex items-center mb-[calc(var(--mb)*4)] justify-center py-12 text-center">
+        <section className="md:hidden relative min-h-[min(80dvh,500px)] flex flex-col items-center mb-[calc(var(--mb)*4)] justify-center py-12 text-center px-2">
           <div className="z-20 mb-auto font-bold">
             <p className="text-white text-[1.25rem]">
               키로수, 연식, 사고차 상관없이
             </p>
-            <h1 className="text-primary text-[1.5rem]">
+            <h1 className="text-primary text-[1.5rem] max-w-[20rem] sm:w-full mt-6 md:mt-0">
               중고차 수출로 최대 300만원 비싸게 파세요
             </h1>
           </div>
@@ -68,21 +70,14 @@ export default function Home() {
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-black opacity-50" />
-          <InquiryForm
-            className="absolute -bottom-16 mb-0 border-none w-[90%] mx-auto left-0 right-0 rounded-lg"
-            smallLabel
-          />
+          <InquiryForm className="" outer />
         </section>
       </article>
-      <article className="px-4 hidden md:block">
-        <h2 className="text-center threeRem font-bold mt-[calc(var(--mb)*2)]">
-          업계 최고{" "}
-          <span className="text-primary underline underline-offset-8">
-            전문가로
-          </span>{" "}
-          견적 받기
-        </h2>
-        <InquiryForm className="max-w-screen-8xl mx-auto" />
+      <article className="relative px-4 mt-[calc(var(--mb)*2)] hidden md:block max-w-screen-8xl mx-auto">
+        <Image src={Ad} alt="광고" width={4960} height={1808} className="" />
+      </article>
+      <article className="px-4 hidden md:block mt-[calc(var(--mb)*2)]">
+        <InquiryForm className="max-w-screen-8xl mx-auto bg-[#FFF1E8]" />
       </article>
       <article className="relative md:py-[calc(var(--mb)*2)] my-[var(--mb)] px-4">
         <div className="absolute inset-0 bg-white opacity-50" />
@@ -217,9 +212,6 @@ export default function Home() {
         <h4 className="text-primary text-center fifty font-bold">
           중고차 수출 절차
         </h4>
-        <div className="triangle animate-pulse" />
-        <div className="triangle animate-pulse" />
-        <div className="triangle animate-pulse" />
         <div className="relative w-full aspect-square max-w-4xl mx-auto mb-[calc(var(--mb))]">
           <Image
             src={Diagram}
@@ -233,8 +225,14 @@ export default function Home() {
           />
         </div>
       </article>
-      <article className="px-4 mb-24">
-        <InquiryForm className="max-w-screen-8xl mx-auto" disableId />
+      <article className="px-4 mb-24 md:hidden">
+        <InquiryForm className="max-w-screen-8xl mx-auto" disableId outer />
+      </article>
+      <article className="px-4 hidden md:block mt-[calc(var(--mb)*2)]">
+        <InquiryForm
+          className="max-w-screen-8xl mx-auto bg-[#FFF1E8]"
+          disableId
+        />
       </article>
       <article className="flex flex-wrap justify-center gap-x-[clamp(4rem,10vw,8rem)] bg-white lg:gap-y-4 gap-y-8 mx-auto px-4 border-t-2 border-primary pt-4 pb-12">
         <PartnerCarousel speed="normal" />

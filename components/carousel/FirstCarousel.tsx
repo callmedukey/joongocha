@@ -3,8 +3,8 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/core";
-import FirstImage from "@/public/sonata.jpeg";
-import SecondImage from "@/public/port.jpeg";
+import FirstImage from "@/public/carousel-1.png";
+import SecondImage from "@/public/carousel-2.png";
 import FirstCarouselItem from "./FirstCarouselItem";
 
 const CarouselList = [

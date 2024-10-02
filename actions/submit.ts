@@ -77,9 +77,9 @@ export async function submitInquiry(formData: z.infer<typeof formSchema>) {
         ?.phoneNumber.replaceAll("-", "") as string,
       from: process.env.SOLAPI_SENDER_PHONE_NUMBER as string,
       text: `
+      K중고차수출
       차량: ${car}
       연락처: ${phone}
-      상담접수되었습니다
       `,
     });
 

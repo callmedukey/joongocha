@@ -29,6 +29,7 @@ const FakeRealtime = () => {
     arrows: false,
     easing: "ease",
     gap: "16px",
+    drag: false,
   };
 
   return (

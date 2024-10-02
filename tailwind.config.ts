@@ -30,11 +30,24 @@ const config: Config = {
         "8xl": "90rem",
       },
       fontFamily: {
-        pretendard: ["Pretendard", "sans-serif"],
+        pretendard: ["var(--font-pretendard)"],
+        notoSans: ["var(--font-noto-sans)"],
       },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        inputBg: {
+          DEFAULT: "hsl(var(--input-bg))",
+          foreground: "hsl(var(--input-bg-foreground))",
+        },
+        inputLabelColor: {
+          DEFAULT: "hsl(var(--input-label-color))",
+          foreground: "hsl(var(--input-label-color-foreground))",
+        },
+        inputLabelColor2: {
+          DEFAULT: "hsl(var(--input-label-color-2))",
+          foreground: "hsl(var(--input-label-color-2-foreground))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
