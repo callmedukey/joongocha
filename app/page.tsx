@@ -74,7 +74,16 @@ export default function Home() {
         </section>
       </article>
       <article className="relative px-4 mt-[calc(var(--mb)*2)] hidden md:block max-w-screen-8xl mx-auto">
-        <Image src={Ad} alt="광고" width={4960} height={1808} className="" />
+        <Image
+          src={Ad}
+          alt="광고"
+          width={4960}
+          height={1808}
+          className=""
+          placeholder="blur"
+          quality={100}
+          priority
+        />
       </article>
       <article className="px-4 hidden md:block mt-[calc(var(--mb)*2)]">
         <InquiryForm className="max-w-screen-8xl mx-auto bg-[#FFF1E8]" />
