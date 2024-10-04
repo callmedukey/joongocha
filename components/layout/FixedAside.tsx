@@ -8,12 +8,12 @@ const FixedAside = () => {
         <p className="text-white hidden md:block">
           내 차 수출하면 얼마 받을 수 있을까?
         </p>
-        <Link
-          href="/#inquiry-form"
+        <a
+          href="#inquiry-form"
           className="md:bg-white px-6 py-2 rounded-lg flex items-center md:text-[1.125rem] text-primaryText md:text-secondaryText justify-self-center"
         >
           비교견적 받기
-        </Link>
+        </a>
         <a
           className="text-white bg-primaryText items-center md:hidden flex justify-center w-full"
           href="tel:050-8208-1308"

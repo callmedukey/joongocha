@@ -243,6 +243,10 @@ export default function Home() {
           disableId
         />
       </article>
+      <div
+        id="inquiry-form"
+        className="scroll-mt-[100vh] md:scroll-mt-[calc(60vh)] lg:scroll-mt-60"
+      />
       <article className="flex flex-wrap justify-center gap-x-[clamp(4rem,10vw,8rem)] bg-white lg:gap-y-4 gap-y-8 mx-auto px-4 border-t-2 border-primary pt-4 pb-12">
         <PartnerCarousel speed="normal" />
       </article>

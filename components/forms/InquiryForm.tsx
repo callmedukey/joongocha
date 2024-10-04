@@ -59,7 +59,6 @@ const InquiryForm = ({
   return (
     <Form {...form}>
       <form
-        id={disableId ? "" : "inquiry-form"}
         className={cn(
           outer
             ? "max-w-4xl mx-auto form-outer form-inner rounded-2xl bg-white border-[#444444] isolate relative xl:px-40 border-[3px]"
